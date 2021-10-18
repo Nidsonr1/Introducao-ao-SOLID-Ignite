@@ -1,0 +1,49 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Introdução ao SOLID",
+    "description": "API para o Desafio 01 do Chapter II do Ignite",
+    "version": "1.0.0",
+    "contact": {
+      "email": "nidson.an@gmail.com"
+    }
+  },
+  "paths": {
+    "/users": {
+      "post": {
+        "tag": ["Users"],
+        "sumary": "Create a new User",
+        "description": "Create a new user",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "name": "John Doe",
+                  "email": "john.doe@example.com"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "User already Exists"
+          }
+        }
+      }
+    }
+  }
+}
