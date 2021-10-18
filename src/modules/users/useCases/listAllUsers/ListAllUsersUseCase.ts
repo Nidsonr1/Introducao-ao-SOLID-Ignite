@@ -17,6 +17,10 @@ class ListAllUsersUseCase {
 
     const all = this.usersRepository.list();
 
+    if (!all) {
+      throw new Error("No user registred");
+    }
+
     return all;
   }
 }
